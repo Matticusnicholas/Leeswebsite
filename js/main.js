@@ -1,0 +1,150 @@
+/* =============================================
+   LEE'S AROMATHERAPY BEAUTY SALON — Main JS
+   ============================================= */
+
+(function () {
+  'use strict';
+
+  /* ----- DOM references ----- */
+  const nav = document.getElementById('nav');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const heroVideo = document.getElementById('hero-video');
+  const contactForm = document.getElementById('contact-form');
+  const yearEl = document.getElementById('current-year');
+
+  /* ----- Current year in footer ----- */
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  /* ----- Mobile nav toggle ----- */
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ----- Nav scroll shadow ----- */
+  var lastScroll = 0;
+  window.addEventListener('scroll', function () {
+    var scrollY = window.scrollY;
+    if (scrollY > 40) {
+      nav.classList.add('nav--scrolled');
+    } else {
+      nav.classList.remove('nav--scrolled');
+    }
+    lastScroll = scrollY;
+  }, { passive: true });
+
+  /* ----- Service card collapsible includes ----- */
+  document.querySelectorAll('.service-card__toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var list = btn.nextElementSibling;
+
+      btn.setAttribute('aria-expanded', !expanded);
+      if (list) {
+        list.classList.toggle('open');
+      }
+    });
+  });
+
+  /* ----- Hero video fallback ----- */
+  if (heroVideo) {
+    heroVideo.addEventListener('error', function () {
+      heroVideo.style.display = 'none';
+    });
+
+    // If no source is set yet, hide the video element so fallback gradient shows
+    if (!heroVideo.querySelector('source') && !heroVideo.src) {
+      heroVideo.style.display = 'none';
+    }
+  }
+
+  /* ----- Smooth scroll for anchor links (fallback for older browsers) ----- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* ----- Scroll reveal animation ----- */
+  var revealElements = document.querySelectorAll(
+    '.service-category, .why-us__card, .location__content, .contact__content'
+  );
+
+  revealElements.forEach(function (el) {
+    el.classList.add('reveal');
+  });
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    // Fallback: show everything immediately
+    revealElements.forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
+
+  /* ----- Contact form (basic client-side handling) ----- */
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var formData = new FormData(contactForm);
+      var name = formData.get('name');
+      var message = formData.get('message');
+
+      if (!name || !message) {
+        return;
+      }
+
+      // TODO: Connect to a backend service (e.g., Formspree, Netlify Forms, or your own API)
+      // For now, show a simple confirmation.
+      var btn = contactForm.querySelector('button[type="submit"]');
+      var originalText = btn.textContent;
+      btn.textContent = 'Message Sent!';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      contactForm.reset();
+
+      setTimeout(function () {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }, 3000);
+    });
+  }
+
+})();
