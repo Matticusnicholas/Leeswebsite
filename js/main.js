@@ -10,7 +10,6 @@
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
   const heroVideo = document.getElementById('hero-video');
-  const contactForm = document.getElementById('contact-form');
   const yearEl = document.getElementById('current-year');
 
   /* ----- Current year in footer ----- */
@@ -116,35 +115,5 @@
     });
   }
 
-  /* ----- Contact form (basic client-side handling) ----- */
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var formData = new FormData(contactForm);
-      var name = formData.get('name');
-      var message = formData.get('message');
-
-      if (!name || !message) {
-        return;
-      }
-
-      // TODO: Connect to a backend service (e.g., Formspree, Netlify Forms, or your own API)
-      // For now, show a simple confirmation.
-      var btn = contactForm.querySelector('button[type="submit"]');
-      var originalText = btn.textContent;
-      btn.textContent = 'Message Sent!';
-      btn.disabled = true;
-      btn.style.opacity = '0.7';
-
-      contactForm.reset();
-
-      setTimeout(function () {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        btn.style.opacity = '1';
-      }, 3000);
-    });
-  }
 
 })();

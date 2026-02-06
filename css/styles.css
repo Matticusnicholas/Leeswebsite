@@ -712,53 +712,6 @@ button {
   line-height: 1.7;
 }
 
-/* Form */
-.form-group {
-  margin-bottom: var(--space-sm);
-}
-
-.form-label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.3rem;
-}
-
-.form-input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  background: var(--black-soft);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
-  color: var(--white);
-  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
-}
-
-.form-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact__form-note {
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.45);
-  text-align: center;
-  margin-top: var(--space-xs);
-}
 
 /* =============================================
    FOOTER
