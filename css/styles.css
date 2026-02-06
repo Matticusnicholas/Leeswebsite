@@ -660,6 +660,12 @@ button {
   color: var(--pink-dark);
 }
 
+.location__hours {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+}
+
 .location__map iframe {
   width: 100%;
   min-height: 280px;
@@ -712,6 +718,12 @@ button {
   line-height: 1.7;
 }
 
+.contact__hours {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+
 
 /* =============================================
    FOOTER
@@ -753,6 +765,13 @@ button {
 
 .footer__phone:hover {
   color: var(--pink);
+}
+
+.footer__hours {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.3rem;
 }
 
 .footer__links {
