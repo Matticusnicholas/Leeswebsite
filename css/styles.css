@@ -615,6 +615,53 @@ button {
   line-height: 1.6;
 }
 
+/* Why Us — Showcase Video */
+.why-us__video-wrap {
+  margin-top: var(--space-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.why-us__video-player {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  background: #000;
+}
+
+.why-us__video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.why-us__play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--gold-light);
+  border-radius: var(--radius-md);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.why-us__play-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--white);
+}
+
+.why-us__play-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+
 /* =============================================
    LOCATION
    ============================================= */

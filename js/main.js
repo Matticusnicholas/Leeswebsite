@@ -60,6 +60,25 @@
     });
   });
 
+  /* ----- Showcase video play button ----- */
+  var showcaseVideo = document.getElementById('showcase-video');
+  var showcasePlay = document.getElementById('showcase-play');
+
+  if (showcaseVideo && showcasePlay) {
+    showcasePlay.addEventListener('click', function () {
+      showcaseVideo.play();
+      showcasePlay.classList.add('hidden');
+    });
+
+    showcaseVideo.addEventListener('pause', function () {
+      showcasePlay.classList.remove('hidden');
+    });
+
+    showcaseVideo.addEventListener('ended', function () {
+      showcasePlay.classList.remove('hidden');
+    });
+  }
+
   /* ----- Hero video fallback ----- */
   if (heroVideo) {
     heroVideo.addEventListener('error', function () {
