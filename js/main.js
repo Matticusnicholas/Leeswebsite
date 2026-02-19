@@ -79,6 +79,25 @@
     });
   }
 
+  /* ----- Equipment video play button ----- */
+  var equipVideo = document.getElementById('equip-video');
+  var equipPlay = document.getElementById('equip-play');
+
+  if (equipVideo && equipPlay) {
+    equipPlay.addEventListener('click', function () {
+      equipVideo.play();
+      equipPlay.classList.add('hidden');
+    });
+
+    equipVideo.addEventListener('pause', function () {
+      equipPlay.classList.remove('hidden');
+    });
+
+    equipVideo.addEventListener('ended', function () {
+      equipPlay.classList.remove('hidden');
+    });
+  }
+
   /* ----- Hero video fallback ----- */
   if (heroVideo) {
     heroVideo.addEventListener('error', function () {
@@ -104,7 +123,7 @@
 
   /* ----- Scroll reveal animation ----- */
   var revealElements = document.querySelectorAll(
-    '.service-category, .why-us__card, .location__content, .contact__content'
+    '.service-category, .gallery__item, .why-us__card, .location__content, .contact__content'
   );
 
   revealElements.forEach(function (el) {

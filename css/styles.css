@@ -559,6 +559,97 @@ button {
 }
 
 /* =============================================
+   GALLERY
+   ============================================= */
+.gallery {
+  padding: var(--space-xl) 0;
+  background: var(--white);
+}
+
+.gallery .section-title {
+  color: var(--black);
+}
+
+.gallery__grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.gallery__item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.gallery__item:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery__item--video {
+  box-shadow: none;
+}
+
+.gallery__item--video:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.gallery__video-player {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: #000;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.gallery__video-player:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.gallery__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.gallery__play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--gold-light);
+  border-radius: var(--radius-md);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.gallery__play-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--white);
+}
+
+.gallery__play-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+
+/* =============================================
    WHY CHOOSE US
    ============================================= */
 .why-us {
@@ -903,6 +994,15 @@ button {
 
   .service-cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__img,
+  .gallery__video {
+    height: 320px;
   }
 
   .why-us__grid {
