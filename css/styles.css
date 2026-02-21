@@ -629,12 +629,14 @@ button {
 .gallery__play-btn {
   position: absolute;
   inset: 0;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.35);
   color: var(--gold-light);
   border-radius: var(--radius-md);
+  cursor: pointer;
   transition: background 0.3s var(--ease), color 0.3s var(--ease);
 }
 
@@ -734,12 +736,14 @@ button {
 .why-us__play-btn {
   position: absolute;
   inset: 0;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.35);
   color: var(--gold-light);
   border-radius: var(--radius-md);
+  cursor: pointer;
   transition: background 0.3s var(--ease), color 0.3s var(--ease);
 }
 
