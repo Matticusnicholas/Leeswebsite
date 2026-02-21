@@ -98,6 +98,25 @@
     });
   }
 
+  /* ----- Promo video play button ----- */
+  var promoVideo = document.getElementById('promo-video');
+  var promoPlay = document.getElementById('promo-play');
+
+  if (promoVideo && promoPlay) {
+    promoPlay.addEventListener('click', function () {
+      promoVideo.play();
+      promoPlay.classList.add('hidden');
+    });
+
+    promoVideo.addEventListener('pause', function () {
+      promoPlay.classList.remove('hidden');
+    });
+
+    promoVideo.addEventListener('ended', function () {
+      promoPlay.classList.remove('hidden');
+    });
+  }
+
   /* ----- Hero video fallback ----- */
   if (heroVideo) {
     heroVideo.addEventListener('error', function () {
