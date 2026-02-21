@@ -649,52 +649,6 @@ button {
   transition: opacity 0.4s var(--ease);
 }
 
-/* =============================================
-   PROMO VIDEO
-   ============================================= */
-.promo {
-  padding: var(--space-lg) 0;
-  background: var(--white);
-}
-
-.promo__player {
-  position: relative;
-  max-width: 480px;
-  margin: 0 auto;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 6px 36px rgba(0, 0, 0, 0.12);
-  background: #000;
-}
-
-.promo__video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.promo__play-btn {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  color: var(--gold-light);
-  border-radius: var(--radius-lg);
-  transition: background 0.3s var(--ease), color 0.3s var(--ease);
-}
-
-.promo__play-btn:hover {
-  background: rgba(0, 0, 0, 0.15);
-  color: var(--white);
-}
-
-.promo__play-btn.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s var(--ease);
-}
 
 /* =============================================
    WHY CHOOSE US
@@ -1044,7 +998,7 @@ button {
   }
 
   .gallery__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .gallery__img,
@@ -1128,6 +1082,11 @@ button {
   /* Service cards */
   .service-cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Gallery 4 cols */
+  .gallery__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   /* Why us 4 cols */
