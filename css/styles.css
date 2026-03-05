@@ -572,6 +572,7 @@ button {
 
 .gallery__grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
 }
 
@@ -589,18 +590,17 @@ button {
 
 .gallery__img {
   width: 100%;
-  height: 100%;
+  height: 240px;
   object-fit: cover;
   display: block;
 }
 
-.gallery__item--video {
-  box-shadow: none;
-}
-
-.gallery__item--video:hover {
-  box-shadow: none;
-  transform: none;
+/* Videos row below photos */
+.gallery__videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
 .gallery__video-player {
@@ -620,8 +620,7 @@ button {
 
 .gallery__video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   border-radius: var(--radius-md);
 }
@@ -1001,13 +1000,12 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .gallery__img {
+    height: 280px;
   }
 
-  .gallery__img,
-  .gallery__video {
-    height: 320px;
+  .gallery__videos {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .why-us__grid {
@@ -1088,9 +1086,13 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Gallery 4 cols */
+  /* Gallery 3 cols */
   .gallery__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery__img {
+    height: 260px;
   }
 
   /* Why us 4 cols */
