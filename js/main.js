@@ -95,6 +95,7 @@
   setupVideoPlayer('showcase-video', 'showcase-play');
   setupVideoPlayer('equip-video', 'equip-play');
   setupVideoPlayer('promo-video', 'promo-play');
+  setupVideoPlayer('main-video', 'main-play');
 
   /* ----- Hero video fallback ----- */
   if (heroVideo) {

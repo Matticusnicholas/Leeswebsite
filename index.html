@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/styles.css?v=3">
+  <link rel="stylesheet" href="./css/styles.css?v=4">
 </head>
 <body>
 
@@ -381,6 +381,14 @@
             loading="lazy"
           >
         </div>
+        <div class="gallery__item">
+          <img
+            src="./assets/images/file_00000000323c720c8e74ee3cffc3f7d8.png"
+            alt="Hycymax facial machine in a candlelit spa treatment room"
+            class="gallery__img"
+            loading="lazy"
+          >
+        </div>
       </div>
 
       <!-- Video showcases -->
@@ -410,6 +418,21 @@
             <source src="./assets/video/cfcce836ba7c8f363986a0ca8fb821d4.mp4" type="video/mp4">
           </video>
           <button class="gallery__play-btn" id="promo-play" aria-label="Play promo video">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+        <!-- TODO: Upload 1.mp4 directly to cPanel at assets/video/1.mp4 (too large for GitHub) -->
+        <div class="gallery__video-player" id="main-player">
+          <video
+            class="gallery__video"
+            id="main-video"
+            preload="metadata"
+            playsinline
+            controls
+          >
+            <source src="./assets/video/1.mp4" type="video/mp4">
+          </video>
+          <button class="gallery__play-btn" id="main-play" aria-label="Play video">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </button>
         </div>
@@ -572,6 +595,6 @@
     <span class="fab__label">Book Now</span>
   </a>
 
-  <script src="./js/main.js?v=3"></script>
+  <script src="./js/main.js?v=4"></script>
 </body>
 </html>
